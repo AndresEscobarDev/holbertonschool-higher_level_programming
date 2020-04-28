@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+for i in range(0, 90):
+    if i != 89 and i / 10 < i % 10:
+        print("{:02d}".format(i), end=", ")
+    elif i / 10 < i % 10:
+        print(i)
