@@ -23,14 +23,14 @@ int is_palindrome(listint_t **head)
 		s[i] = current->n;
 		current = current->next;
 	}
-	for (j = 0, i--; i > j; i--, j++)
+	for (j = 0, i--; j < i / 2; j++)
 	{
-		if (s[i] != s[j])
+		if (s[i - j] != s[j])
 		{
-
+			free(s);
 			return (0);
 		}
 	}
-
+	free(s);
 	return (1);
 }
