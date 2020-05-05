@@ -27,10 +27,10 @@ int is_palindrome(listint_t **head)
 	{
 		if (s[i] != s[j])
 		{
-			free(s);
+
 			return (0);
 		}
 	}
-	free(s);
+
 	return (1);
 }
