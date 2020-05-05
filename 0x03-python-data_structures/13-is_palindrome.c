@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int i, j;
 	int *s = NULL;
 
-	if (!*head)
+	if (!*head || !head || !head[0]->next)
 		return (1);
 	current = *head;
 	for (i = 0; current; i++)
@@ -23,9 +23,9 @@ int is_palindrome(listint_t **head)
 		s[i] = current->n;
 		current = current->next;
 	}
-	for (j = 0, i--; j < i / 2; j++)
+	for (j = 0, i--; i > j; i--, j++)
 	{
-		if (s[i - j] != s[j])
+		if (s[i] != s[j])
 		{
 			free(s);
 			return (0);
