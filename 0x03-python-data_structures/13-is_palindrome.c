@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int i, j;
 	int *s = NULL;
 
-	if (!*head || !head || !head[0]->next)
+	if (!*head || !(*head)->next)
 		return (1);
 	current = *head;
 	for (i = 0; current; i++)
