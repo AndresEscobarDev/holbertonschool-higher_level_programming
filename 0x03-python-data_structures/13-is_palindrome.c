@@ -8,14 +8,14 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = NULL;
-	int i, j;
+	int i = 0, j;
 	int *s = NULL;
 
 	if (!*head || !(*head)->next)
 		return (1);
 	current = *head;
-	for (i = 0; current; i++)
-		current = current->next;
+	while (current)
+		current = current->next, i++;
 	current = *head;
 	s = malloc(sizeof(int) * (i));
 	for (i = 0; current; i++)
