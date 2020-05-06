@@ -1,21 +1,28 @@
 #include "lists.h"
 /**
- * add_nodeint - adds a new node at the beginning of a listint_t list.
- * @head: Head of the listint.
- * @n: new element.
- * Return: A pointer to the new element.
+ * be_or_not_be - Function that evaluates if a linked
+ * list is palindrome or not
+ * @head: header of a linked list
+ * Return: 1 if is palidrome 0 if not
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+int be_or_not_be(int i, listint_t *head)
 {
-	listint_t *new;
+	int s[i], j = 0;
 
-	new = malloc(sizeof(listint_t));
-	if (!new)
-		return (0);
-	new->n = n;
-	new->next = *head;
-	*head = new;
-	return (new);
+	while (head)
+	{
+		s[j++] = head->n;
+		head = head->next;
+	}
+	i = 0;
+	j--;
+	while (i < j)
+	{
+
+		if (s[i++] != s[j--])
+			return (0);
+	}
+	return (1);
 }
 /**
  * is_palindrome - Function that evaluates if a linked
@@ -25,26 +32,13 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current = NULL, *new = NULL;
+	listint_t *current = NULL;
+	int i = 0;
 
 	if (!*head || !head[0]->next)
 		return (1);
 	current = *head;
 	while (current)
-	{
-		new = add_nodeint(&new, current->n);
-		current = current->next;
-	}
-	current = *head;
-	while (current)
-	{
-		if (current->n != new->n)
-		{
-			free_listint(new);
-			return (0);
-		}
-		current = current->next;
-		new = new->next;
-	}
-	return (1);
+		current = current->next, i++;
+	return (be_or_not_be(i, *head));
 }
