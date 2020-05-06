@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 	while (current)
 		current = current->next, i++;
 	current = *head;
-	int s[i];
+	int s[100];
 	while (current)
 		s[j++] = current->n, current = current->next;
 	i = 0;
