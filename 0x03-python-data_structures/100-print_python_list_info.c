@@ -9,7 +9,7 @@ void print_python_list_info(PyObject *p)
     printf("[*] Allocated = %ld\n", list->allocated)
     for (i = 0; i < size; i++)
     {
-        list = (PyList_GET_ITEM(p, i));
+        list = (PyList_GET_ITEM(p, i))->ob_item[i]->tp_name;
         printf("Element %d: %s\n", i, list);
     }
     
