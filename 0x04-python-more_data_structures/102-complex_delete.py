@@ -2,6 +2,8 @@
 def complex_delete(a_dictionary, value):
     if not a_dictionary:
         return None
+    if not value:
+        return a_dictionary
     switch = True
     while switch:
         c = 0
