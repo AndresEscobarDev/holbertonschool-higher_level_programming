@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if not a_dictionary:
         return None
-    s = ""
-    for j in a_dictionary:
-        if s == "" or a_dictionary[j] > a_dictionary[s]:
-            s = j
+    s = None
+    for i, j in a_dictionary.items():
+        if not s or j > a_dictionary[s]:
+            s = i
     return s
