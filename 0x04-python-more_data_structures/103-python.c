@@ -18,7 +18,7 @@ void print_python_list(PyObject *p)
 }
 void print_python_bytes(PyObject *p)
 {
-	char *s = PyBytes_AS_STRING(p);
+	char *s = NULL;
 	unsigned long int len = 0, i;  
 
 	printf("[.] bytes object info\n");
@@ -27,6 +27,7 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
+	s = PyBytes_AS_STRING(p);
 	len = PyBytes_GET_SIZE(p);
 	printf("  trying string: %s\n", s);
 	printf("  size: %ld\n", len);
