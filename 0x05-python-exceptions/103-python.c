@@ -13,7 +13,8 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	PyBytes_AsStringAndSize(p, &s, &len);
+	s = ((PyBytesObject *)p)->ob_sval;
+	len = ((PyVarObject *)p)->ob_size;
 	printf("  size: %ld\n", len);
 	printf("  trying string: %s\n", s);
 	if (len < 10)
