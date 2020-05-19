@@ -24,6 +24,7 @@ void print_python_bytes(PyObject *p)
 	for (i = 0; i <= len && i < 10; i++)
 		printf(" %02hhx", s[i]);
 	printf("\n");
+	fflush(stdout);
 }
 
 void print_python_float(PyObject *p)
@@ -41,6 +42,7 @@ void print_python_float(PyObject *p)
 		printf("  value: %.1f\n", num);
 	else
 		printf("  value: %.16g\n", num);
+	fflush(stdout);
 }
 
 void print_python_list(PyObject *p)
@@ -67,4 +69,5 @@ void print_python_list(PyObject *p)
 		if (!strcmp(type, "float"))
 			print_python_float(py_item->ob_item[i]);
 	}
+	fflush(stdout);
 }
