@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Square Module"""
+
+
 class Square():
     """Square.
     Private instance attribute: size.
