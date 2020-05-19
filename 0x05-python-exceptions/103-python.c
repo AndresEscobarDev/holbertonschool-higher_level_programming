@@ -35,7 +35,7 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	num = PyFloat_AsDouble(p);
+	num = ((PyFloatObject *)p)->ob_fval;
 	if (num - (int)num == 0)
 		printf("value: %.1f\n", num);
 	else
