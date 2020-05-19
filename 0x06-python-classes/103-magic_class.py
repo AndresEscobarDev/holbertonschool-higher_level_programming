@@ -10,7 +10,7 @@ class MagicClass():
     Public instance method: def area(self).
     Public instance method: def circumference(self).
     """
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """Constructor"""
         self._MagicClass__radius = 0
         if type(radius) is not int and type(radius) is not float:
