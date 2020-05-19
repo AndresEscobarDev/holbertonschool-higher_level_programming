@@ -38,9 +38,9 @@ void print_python_float(PyObject *p)
 	}
 	num = ((PyFloatObject *)p)->ob_fval;
 	if (num - (int)num == 0)
-		printf("value: %.1f\n", num);
+		printf("  value: %.1f\n", num);
 	else
-		printf("value: %.16g\n", num);
+		printf("  value: %.16g\n", num);
 }
 
 void print_python_list(PyObject *p)
