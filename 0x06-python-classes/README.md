@@ -4,4 +4,4 @@
 
 Files | Description
 ------|------------
-[0-square.py] | Python class Square that define an empty square
+(./0-square.py) | Python class Square that define an empty square
