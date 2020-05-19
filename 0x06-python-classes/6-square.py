@@ -54,7 +54,7 @@ class Square():
         """"prints in stdout the square with the character #"""
         print("".join("\n" for j in range(self.__position[1])), end="")
         for i in range(self.__size):
-            print("".join("_" for j in range(self.__position[0])), end="")
+            print("".join(" " for j in range(self.__position[0])), end="")
             print("".join("#" for j in range(self.__size)), end="")
             print("\n" if i + 1 != self.__size else "", end="")
         print()
