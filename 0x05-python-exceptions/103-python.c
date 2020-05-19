@@ -29,6 +29,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	long double num = 0;
+	char *str = NULL;
 
 	printf("[.] float object info\n");
 	if(!PyFloat_Check(p))
@@ -37,10 +38,8 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	num = ((PyFloatObject *)p)->ob_fval;
-	if (num - (int)num == 0)
-		printf("  value: %.1Lf\n", num);
-	else
-		printf("  value: %.16Lg\n", num);
+	str = PyOS_double_to_string(num, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", str);
 }
 
 void print_python_list(PyObject *p)
