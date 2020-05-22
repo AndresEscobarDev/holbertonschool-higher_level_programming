@@ -1,0 +1,68 @@
+The ``matrix_divided`` module
+==========================
+
+Using ``matrix_divided``
+---------------------
+
+Import function:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6, 9]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [
+    ... [1.9, 2, 3.1591],
+    ... [4.64854, 5, 6],
+    ... [9, 2, 3.1591]]
+    >>> matrix_divided(matrix, 4)
+    [[0.47, 0.5, 0.79], [1.16, 1.25, 1.5], [2.25, 0.5, 0.79]]
+
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 2.54)
+    [[0.39, 0.79, 1.18], [1.57, 1.97, 2.36]]
+
+    >>> matrix_divided("matrix", 2.54)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... [],
+    ... []]
+    >>> matrix_divided(matrix, 5)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... "HOLI",
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 4)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... [1, "2", 3],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 2.54)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
