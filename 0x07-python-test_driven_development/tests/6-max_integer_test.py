@@ -13,3 +13,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-56, 1, -564911]), 1)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer(), None)
+    def test_none(self):
+        with self.assertRaises(TypeError):
+            max_integer(None)
