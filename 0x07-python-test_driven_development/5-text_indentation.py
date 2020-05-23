@@ -12,7 +12,7 @@ def text_indentation(text):
     new = ""
     j = 0
     while i < len(text) and text[i] == ' ':
-        i +=1
+        i += 1
     while i < len(text):
         if text[i] == '.' or text[i] == '?' or text[i] == ':':
             new += text[i]
