@@ -44,6 +44,18 @@ Now use it:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer("1", "2")
+    >>> add_integer(float("Pepito"), 2)
+    Traceback (most recent call last):
+    ValueError: could not convert string to float: 'Pepito'
+
+    >>> add_integer(True, "2")
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    >>> add_integer(5, False)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(9999e9999)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
