@@ -32,3 +32,11 @@ Now use it:
     >>> print_square("HOLI")
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+    
+    >>> print_square(15, 6)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
