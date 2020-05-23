@@ -10,14 +10,21 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     i = 0
     new = ""
+    j = 0
+    while i < len(text) and text[i] == ' ':
+        i +=1
     while i < len(text):
         if text[i] == '.' or text[i] == '?' or text[i] == ':':
             new += text[i]
             i += 1
             new += "\n\n"
-            while text[i] == ' ':
+            while i < len(text) and text[i] == ' ':
                 i += 1
         else:
             new += text[i]
             i += 1
-    print(new, end="")
+    for i in range(len(new)-1, 0, -1):
+        if new[i] != ' ':
+            break
+        j += 1
+    print(new[:len(new) - j], end="")
