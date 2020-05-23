@@ -59,3 +59,7 @@ Now use it:
     >>> add_integer(9999e9999)
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'), 6)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
