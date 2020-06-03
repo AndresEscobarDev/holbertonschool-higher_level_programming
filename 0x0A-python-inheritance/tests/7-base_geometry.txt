@@ -15,6 +15,10 @@ Now use it:
 
     >>> bg.integer_validator("Giant", 9999999999999999999999999999999999999999999999999999999999999999999999)
 
+    >>> bg.integer_validator("Imagi", 999999e999999)
+    Traceback (most recent call last):
+    TypeError: Imagi must be an integer
+
     >>> bg.integer_validator("Zero", 0)
     Traceback (most recent call last):
     ValueError: Zero must be greater than 0
@@ -23,9 +27,9 @@ Now use it:
     Traceback (most recent call last):
     ValueError: Negative must be greater than 0
 
-    >>> bg.integer_validator("Negative", 5.7)
+    >>> bg.integer_validator("Float", 5.7)
     Traceback (most recent call last):
-    TypeError: Negative must be an integer
+    TypeError: Float must be an integer
 
     >>> bg.integer_validator("Lonely")
     Traceback (most recent call last):
@@ -35,15 +39,15 @@ Now use it:
     Traceback (most recent call last):
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-    >>> bg.integer_validator("T-T", float('nan'))
+    >>> bg.integer_validator("NaN", float('nan'))
     Traceback (most recent call last):
-    TypeError: T-T must be an integer
+    TypeError: NaN must be an integer
 
-    >>> bg.integer_validator("Other", [9])
+    >>> bg.integer_validator("Other", [9, 8])
     Traceback (most recent call last):
     TypeError: Other must be an integer
 
-    >>> bg.integer_validator("Other", (9,))
+    >>> bg.integer_validator("Other", (9, 8))
     Traceback (most recent call last):
     TypeError: Other must be an integer
 

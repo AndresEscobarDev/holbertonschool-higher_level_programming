@@ -14,6 +14,9 @@ Now use it:
     >>> my_list
     []
 
+    >>> my_list.print_sorted()
+    []
+
     >>> my_list.append(3)
 
     >>> my_list.append(999)
@@ -31,15 +34,18 @@ Now use it:
     >>> my_list
     [3, 999, 1, 2]
 
+    >>> my_list.append(-9)
+
+    >>> my_list
+    [3, 999, 1, 2, -9]
+
+    >>> my_list.print_sorted()
+    [-9, 1, 2, 3, 999]
+
     >>> my_list = MyList("Holberton")
 
     >>> my_list
     ['H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n']
 
-    my_list.print_sorted()
+    >>> my_list.print_sorted()
     ['H', 'b', 'e', 'l', 'n', 'o', 'o', 'r', 't']
-
-    >>> new = MyList()
-
-    >>> new.print_sorted()
-    []
