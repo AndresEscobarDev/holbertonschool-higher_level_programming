@@ -13,11 +13,15 @@ Now use it:
 
     >>> bg.integer_validator("int", 999)
 
-    >>> bg.integer_validator("Giant", 9999999999999999999999999999999999999999999999999999999999999999999999)
+    >>> bg.integer_validator("Giant", 999999999999999999999999999999999999999999999999999999999999999999999999999)
 
     >>> bg.integer_validator("Imagi", 999999e999999)
     Traceback (most recent call last):
     TypeError: Imagi must be an integer
+
+    >>> bg.integer_validator("String", "Holi")
+    Traceback (most recent call last):
+    TypeError: String must be an integer
 
     >>> bg.integer_validator("Zero", 0)
     Traceback (most recent call last):
