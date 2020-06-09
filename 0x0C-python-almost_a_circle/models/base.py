@@ -43,7 +43,8 @@ class Base:
             if list_objs is None or list_objs == []:
                 f.write("[]")
             else:
-                f.write(cls.to_json_string([i.to_dictionary() for i in list_objs]))
+                f.write(cls.to_json_string([i.to_dictionary()
+                                           for i in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
@@ -96,7 +97,8 @@ class Base:
             else:
                 l = [i.to_dictionary() for i in list_objs]
                 if cls.__name__ == "Rectangle":
-                    w = csv.DictWriter(f, fieldnames=['id', 'width', 'height', 'x', 'y'])
+                    w = csv.DictWriter(f, fieldnames=['id', 'width',
+                                                      'height', 'x', 'y'])
                 elif cls.__name__ == "Square":
                     w = csv.DictWriter(f, fieldnames=['id', 'size', 'x', 'y'])
                 w.writeheader()
