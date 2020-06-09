@@ -49,7 +49,7 @@ class Square(Rectangle):
                         raise TypeError("id must be an integer")
                     self.id = j
                 if i == "size":
-                    self.width = j
+                    self.size = j
                 if i == "x":
                     self.x = j
                 if i == "y":
