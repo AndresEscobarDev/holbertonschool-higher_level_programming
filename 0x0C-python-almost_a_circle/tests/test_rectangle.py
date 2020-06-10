@@ -4,11 +4,18 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 import unittest
+import pep8
+
 
 class TestRectangle(unittest.TestCase):
     """ Test class for Rectangle class """
     def setUp(self):
         Base._Base__nb_objects = 0
+
+    def test_pep8(self):
+        pep8s = pep8.StyleGuide(quiet=True)
+        r = pep8s.check_files(['./models/rectangle.py'])
+        self.assertEqual(r.total_errors, 0)
 
     def test_id(self):
         r1 = Rectangle(8, 9)
