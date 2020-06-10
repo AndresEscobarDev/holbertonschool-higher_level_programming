@@ -126,32 +126,3 @@ class Base:
                 return l
         except FileNotFoundError:
             return l
-
-    """@staticmethod
-    def draw(list_rectangles, list_squares):
-         Static method draw that opens
-        a window and draws all the Rectangles
-        and Squares
-        
-        import turtle
-
-        t = turtle.Turtle()
-        turtle.bgcolor("purple")
-        t.color("blue")
-        t.shape("Square")
-        t.pensize(10)
-        for i in (list_rectangles + list_squares):
-            t.penup()
-            t.setpos(0, 0)
-            turtle.Screen().colormode(200)
-            t.pencolor(100, 150, 200)
-            t.setpos(i.x, i.y)
-            t.pendown()
-            t.forward(i.width)
-            t.left(90)
-            t.forward(i.height)
-            t.left(90)
-            t.forward(i.width)
-            t.left(90)
-            t.forward(i.height)
-"""
