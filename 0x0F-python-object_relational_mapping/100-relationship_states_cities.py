@@ -19,7 +19,7 @@ if __name__ == "__main__":
     s = Session(engine)
     newc = City(name='San Francisco')
     news = State(name='California')
-    news.city.append(newc)
+    news.cities.append(newc)
     s.add_all([news, newc])
     s.commit()
     s.close()

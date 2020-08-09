@@ -19,6 +19,6 @@ if __name__ == "__main__":
     s = Session(engine)
     for state in s.query(State).order_by(State.id).all():
         print("{}: {}".format(state.id, state.name))
-        for city in state.city:
+        for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
     s.close()
