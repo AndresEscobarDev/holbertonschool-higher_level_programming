@@ -2,7 +2,6 @@
 """ Definition of the state class """
 
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import City
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
